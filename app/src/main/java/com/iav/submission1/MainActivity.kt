@@ -18,14 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-//        textView("Hello World!") {
-//            app:layout_constraintBottom_toBottomOf = parent
-//            app:layout_constraintLeft_toLeftOf = parent
-//            app:layout_constraintRight_toRightOf = parent
-//            app:layout_constraintTop_toTopOf = parent
-//        }.lparams(width = wrapContent, height = wrapContent)
-//    }
         linearLayout {
             orientation = LinearLayout.VERTICAL
             recyclerView {
@@ -36,16 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         rv_football.layoutManager = LinearLayoutManager(this)
         rv_football.adapter = FootBallAdapter(this, items) {
-
-            val images = it.image
-            val imagaseting = images.toString()
-//            val toast = Toast.makeText(applicationContext, imagaseting, Toast.LENGTH_SHORT)
-//            toast?.show()
-//            val intent = Intent(this, DetailFootballActivity::class.java)
-//            intent.putExtra(Config.BUNDLE_FOOTBALL_NAME, it.name)
-//            intent.putExtra(Config.BUNDLE_FOOTBALL_IMAGE, imagaseting)
-//            intent.putExtra(Config.BUNDLE_FOOTBALL_DESC, it.des)
-//            startActivity(intent)
             startActivity(intentFor<DetailFootballActivity>(Config.BUNDLE_FOOTBALL_NAME to it.name,
                     Config.BUNDLE_FOOTBALL_IMAGE to it.image,
                     Config.BUNDLE_FOOTBALL_DESC to it.des))

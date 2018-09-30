@@ -14,7 +14,6 @@ class DetailFootballActivity : AppCompatActivity() {
     var name: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_detail_football)
         scrollView {
             linearLayout {
                 orientation = LinearLayout.VERTICAL
@@ -48,8 +47,6 @@ class DetailFootballActivity : AppCompatActivity() {
         var gambar = intent.getIntExtra(Config.BUNDLE_FOOTBALL_IMAGE, 0)
         name = intent.getStringExtra(Config.BUNDLE_FOOTBALL_NAME)
         desc = intent.getStringExtra(Config.BUNDLE_FOOTBALL_DESC)
-
-//        Glide.with(this).load(image).into(iv_football)
         iv_football.setImageResource(gambar)
         tv_fottball_name.setText(name)
         tv_fottball_desc.setText(desc)
